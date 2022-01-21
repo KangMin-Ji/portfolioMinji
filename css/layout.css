@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'RoslindaleText';
+  src: url('../font/RoslindaleText-Regular.eot');
+  src: local('../font/RoslindaleText Regular'), local('RoslindaleText-Regular'),
+      url('../font/RoslindaleText-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../font/RoslindaleText-Regular.woff2') format('woff2'),
+      url('../font/RoslindaleText-Regular.woff') format('woff'),
+      url('../font/RoslindaleText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MaruBuri-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html{
+  overflow-x: hidden;
+}
+html.on{
+  overflow-y:hidden;
+}
+
+body{
+  font-family: 'RoslindaleText', 'MaruBuri-Regular';
+  overflow-x: hidden; 
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; 
+  /* for Chrome, Safari, and Opera */
+}
+
+.scroll_wrap {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+}
+.scroll_wrap::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+.noise_bg {
+  background: url(../images/noise.png) repeat;
+  width: 200vw;
+  height: 200vh;
+  background-size: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  z-index: 200;
+  pointer-events: none;
+}
+
+/* header */
+
+header{
+  width: 100%;
+  height: 80px;
+  z-index: 2;
+  z-index: 100;
+  position: absolute;
+}
+header .inner{
+  padding: 0 30px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+  transition: 0.5s;
+  z-index: 1;
+}
+header .header_left{
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 200;
+}
+header .logo{
+  width: 120px;
+}
+header .logo a{
+  display: block;
+  height: 100%;
+}
+header .logo a svg{
+  width: 100%;
+}
+header .logo a svg g{
+  fill: #fff;
+  stroke: #fff;
+}
+header .header_left .txt_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+header .header_left .txt_wrap p{
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: 'Saira', sans-serif;
+  line-height: 1.2;
+}
+header .ham_btn{
+  display: block;
+  float: right;
+  position: relative;
+  z-index: 99;
+}
+header .ham_btn .btn_wrap{
+  width: 28px;
+}
+header .btn_wrap .line{
+  width: 100%;
+  height: 2px;
+  margin-bottom: 5px;
+  background: #fff;
+  float: right;
+}
+header .btn_wrap .line.line_bottom{
+  width: 86%;
+  margin-bottom: 0;
+}
+header .inner.on{
+  background: #e5e7eb;
+  color: #000;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+header .inner.on .line{
+  background: #000;
+}
+header .inner.on .logo a svg g{
+  fill: #231815;
+  stroke: #231815;
+}
+
+header .gnb_area{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  /* z-index: 99; */
+}
+header .gnb_area .gnb{
+  width: 100%;
+  height: 100%;
+  background: #e5e7eb;
+  padding-top: 80px;
+}
+header .gnb_area .gnb li{
+  width: 70%;
+  height: calc(100% / 4);
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0,0,0,0.8);
+  font-size: var(--font_menu);
+  display: flex;
+  align-items: center;
+  color: rgba(0,0,0,0.8);
+  transition: 0.3s;
+}
+header .gnb_area .gnb li:last-child{
+  border-bottom: 0;
+}
+header .gnb_area .gnb li span{
+  display: block;
+  font-size: var(--font_menu_span);
+  margin-bottom: 10px;
+}
+header .gnb_area .gnb li:hover {
+  color: #89b9fd;
+}
+footer {
+  height: 100px;
+  background: #000;
+  position: relative;
+}
+footer p {
+  width: 90%;
+  text-align: center;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.8);
+  line-height: 2;
+  font-size: var(--font_footer);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+@media screen and (max-width: 500px) {
+  header .inner{
+    padding: 0 10px;
+  }
+  header .header_title {
+    display: none;
+  }
+}
